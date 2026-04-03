@@ -1,0 +1,1033 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Add-ons and future features available for the AZAI x Brume Coffee Bar website."
+    />
+    <title>What We Can Build — AZAI × Brume Add-Ons</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Cormorant+Garamond:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* ── Add-Ons page styles ─────────────────────────── */
+
+      .addons-hero {
+        border-top: 0;
+        padding: clamp(6rem, 12vw, 9rem) 0 clamp(4rem, 7vw, 6rem);
+        background:
+          radial-gradient(circle at 14% 20%, rgba(150, 120, 88, 0.28), transparent 38%),
+          radial-gradient(circle at 84% 76%, rgba(120, 140, 100, 0.2), transparent 40%),
+          linear-gradient(160deg, #1a1410 0%, #231c16 55%, #12100e 100%);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .addons-hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(ellipse at 50% 100%, rgba(205, 168, 118, 0.12), transparent 60%);
+        pointer-events: none;
+      }
+
+      .addons-hero .eyebrow {
+        color: rgba(220, 192, 155, 0.7);
+      }
+
+      .addons-hero .eyebrow::before {
+        background: rgba(220, 192, 155, 0.45);
+      }
+
+      .addons-hero h1 {
+        font-family: var(--font-serif);
+        font-size: clamp(3rem, 7.5vw, 6.4rem);
+        line-height: 0.92;
+        color: rgba(254, 246, 234, 0.97);
+        margin-bottom: var(--space-4);
+        max-width: 14ch;
+      }
+
+      .addons-hero .lead {
+        color: rgba(235, 220, 198, 0.82);
+        max-width: 56ch;
+        margin-bottom: 0;
+      }
+
+      .addons-scope-note {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+        margin-top: clamp(1.6rem, 3vw, 2.2rem);
+        padding: 1rem 1.2rem;
+        border-radius: var(--radius-md);
+        border: 1px solid rgba(220, 192, 155, 0.3);
+        background: rgba(220, 192, 155, 0.07);
+        max-width: 62ch;
+      }
+
+      .addons-scope-note svg {
+        flex-shrink: 0;
+        width: 1.15rem;
+        height: 1.15rem;
+        stroke: rgba(220, 192, 155, 0.75);
+        stroke-width: 1.8;
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        margin-top: 0.1rem;
+      }
+
+      .addons-scope-note p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+        color: rgba(225, 202, 168, 0.82);
+        margin: 0;
+      }
+
+      .addons-scope-note a {
+        color: rgba(235, 215, 180, 0.95);
+        text-decoration: underline;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 0.18em;
+        font-weight: 600;
+      }
+
+      .addons-scope-note a:hover {
+        color: rgba(252, 238, 210, 1);
+      }
+
+      .addons-hero-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-3);
+        margin-top: clamp(2rem, 4vw, 2.8rem);
+      }
+
+      .hero-stat {
+        border: 1px solid rgba(220, 192, 155, 0.28);
+        border-radius: var(--radius-md);
+        padding: 0.9rem 1.2rem;
+        background: rgba(255, 248, 236, 0.06);
+        backdrop-filter: blur(8px);
+      }
+
+      .hero-stat strong {
+        display: block;
+        font-family: var(--font-serif);
+        font-size: 1.85rem;
+        color: rgba(250, 235, 210, 0.97);
+        line-height: 1;
+        margin-bottom: 0.2rem;
+      }
+
+      .hero-stat span {
+        font-size: 0.78rem;
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        color: rgba(220, 195, 158, 0.68);
+      }
+
+      /* ── Section ─────────────────────────────────────── */
+
+      .addons-section {
+        background: linear-gradient(180deg, #f4ece0, #ede3d4);
+        padding: clamp(3.5rem, 7vw, 5.5rem) 0;
+        border-top: 0;
+      }
+
+      .addons-section-head {
+        margin-bottom: clamp(2.4rem, 5vw, 3.5rem);
+        max-width: 720px;
+      }
+
+      .addons-section-head h2 {
+        font-family: var(--font-serif);
+        font-size: clamp(2rem, 4vw, 3rem);
+        line-height: 1.04;
+        margin-bottom: var(--space-2);
+      }
+
+      .addons-section-head p {
+        font-size: clamp(1rem, 1.4vw, 1.1rem);
+      }
+
+      /* ── Grid ────────────────────────────────────────── */
+
+      .addons-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: var(--space-4);
+      }
+
+      /* ── Card ────────────────────────────────────────── */
+
+      .addon-card {
+        position: relative;
+        background: rgba(255, 252, 246, 0.9);
+        border: 1px solid rgba(78, 63, 49, 0.18);
+        border-radius: var(--radius-xl);
+        padding: clamp(1.4rem, 2.5vw, 2rem);
+        box-shadow: var(--shadow-soft);
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-3);
+        transition: transform 280ms ease, box-shadow 280ms ease, border-color 280ms ease;
+        overflow: hidden;
+      }
+
+      .addon-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-card);
+        border-color: rgba(78, 63, 49, 0.34);
+      }
+
+      .addon-card--highlight {
+        border-color: rgba(140, 105, 68, 0.42);
+        background: linear-gradient(160deg, rgba(255, 253, 248, 0.96), rgba(248, 239, 225, 0.96));
+      }
+
+      .addon-card--highlight::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        background: radial-gradient(circle at 90% 6%, rgba(194, 152, 102, 0.18), transparent 42%);
+        pointer-events: none;
+      }
+
+      /* ── Card top row ────────────────────────────────── */
+
+      .addon-card__top {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: var(--space-2);
+      }
+
+      .addon-card__icon {
+        width: 2.6rem;
+        height: 2.6rem;
+        border-radius: var(--radius-sm);
+        background: rgba(48, 38, 30, 0.08);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      .addon-card__icon svg {
+        width: 1.3rem;
+        height: 1.3rem;
+        stroke: var(--color-espresso);
+        stroke-width: 1.6;
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .addon-card__badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.35rem;
+        justify-content: flex-end;
+      }
+
+      .addon-badge {
+        border-radius: 999px;
+        padding: 0.22rem 0.62rem;
+        font-size: 0.67rem;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .addon-badge--azai {
+        background: rgba(36, 28, 22, 0.1);
+        color: var(--color-espresso);
+        border: 1px solid rgba(36, 28, 22, 0.2);
+      }
+
+      .addon-badge--brume {
+        background: rgba(130, 90, 55, 0.12);
+        color: #6b3d1e;
+        border: 1px solid rgba(130, 90, 55, 0.26);
+      }
+
+      .addon-badge--both {
+        background: rgba(80, 115, 75, 0.1);
+        color: #2e5227;
+        border: 1px solid rgba(80, 115, 75, 0.24);
+      }
+
+      .addon-badge--featured {
+        background: rgba(160, 118, 60, 0.15);
+        color: #7a4a10;
+        border: 1px solid rgba(160, 118, 60, 0.32);
+      }
+
+      /* ── Card body ───────────────────────────────────── */
+
+      .addon-card h3 {
+        font-family: var(--font-serif);
+        font-size: clamp(1.45rem, 2.2vw, 1.85rem);
+        line-height: 1.05;
+        color: var(--color-ink);
+        margin-bottom: 0;
+      }
+
+      .addon-card__desc {
+        font-size: 0.95rem;
+        color: rgba(44, 36, 28, 0.8);
+        line-height: 1.68;
+        flex: 1;
+      }
+
+      /* ── Benefit block ───────────────────────────────── */
+
+      .addon-card__benefit {
+        border-top: 1px solid rgba(72, 58, 46, 0.14);
+        padding-top: var(--space-3);
+        display: flex;
+        gap: 0.6rem;
+        align-items: flex-start;
+      }
+
+      .benefit-arrow {
+        flex-shrink: 0;
+        width: 1.25rem;
+        height: 1.25rem;
+        margin-top: 0.1rem;
+        color: var(--color-espresso);
+        opacity: 0.7;
+      }
+
+      .benefit-arrow svg {
+        width: 100%;
+        height: 100%;
+        fill: currentColor;
+      }
+
+      .addon-card__benefit p {
+        font-size: 0.88rem;
+        font-weight: 600;
+        color: rgba(55, 42, 32, 0.86);
+        line-height: 1.56;
+      }
+
+      /* ── CTA ─────────────────────────────────────────── */
+
+      .addons-cta-section {
+        background:
+          radial-gradient(circle at 88% 14%, rgba(175, 138, 96, 0.28), transparent 38%),
+          linear-gradient(160deg, #1c1510 0%, #261d16 60%, #111009 100%);
+        padding: clamp(4rem, 8vw, 6rem) 0;
+        border-top: 0;
+      }
+
+      .addons-cta-inner {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: clamp(2rem, 5vw, 4rem);
+        align-items: center;
+      }
+
+      .addons-cta-inner h2 {
+        font-family: var(--font-serif);
+        font-size: clamp(2.2rem, 5vw, 4rem);
+        line-height: 0.98;
+        color: rgba(254, 244, 228, 0.97);
+        margin-bottom: var(--space-3);
+      }
+
+      .addons-cta-inner > div > p {
+        color: rgba(232, 212, 185, 0.8);
+        max-width: 52ch;
+        font-size: clamp(1rem, 1.4vw, 1.1rem);
+        margin-bottom: var(--space-5);
+      }
+
+      .addons-cta-inner .eyebrow {
+        color: rgba(220, 188, 145, 0.68);
+      }
+
+      .addons-cta-inner .eyebrow::before {
+        background: rgba(220, 188, 145, 0.44);
+      }
+
+      .cta-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-3);
+      }
+
+      .cta-actions .btn-primary {
+        background: rgba(245, 232, 210, 0.95);
+        border-color: rgba(245, 232, 210, 0.95);
+        color: var(--color-ink);
+      }
+
+      .cta-actions .btn-primary:hover {
+        background: #fff;
+        border-color: #fff;
+      }
+
+      .cta-actions .btn-secondary {
+        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba(232, 208, 175, 0.38);
+        color: rgba(245, 232, 210, 0.9);
+      }
+
+      .cta-actions .btn-secondary:hover {
+        background: rgba(255, 255, 255, 0.14);
+        border-color: rgba(232, 208, 175, 0.55);
+      }
+
+      .cta-contact-card {
+        border-radius: var(--radius-xl);
+        border: 1px solid rgba(220, 192, 155, 0.24);
+        background: rgba(255, 248, 236, 0.07);
+        backdrop-filter: blur(10px);
+        padding: clamp(1.4rem, 2.5vw, 2rem);
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-4);
+      }
+
+      .cta-contact-item p {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        color: rgba(218, 188, 148, 0.6);
+        margin-bottom: 0.3rem;
+      }
+
+      .cta-contact-item a,
+      .cta-contact-item span {
+        display: block;
+        font-size: 1.05rem;
+        color: rgba(248, 234, 210, 0.92);
+        font-weight: 500;
+      }
+
+      .cta-contact-item a:hover {
+        color: rgba(255, 245, 225, 1);
+      }
+
+      /* ── Responsive ──────────────────────────────────── */
+
+      @media (max-width: 1060px) {
+        .addons-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 720px) {
+        .addons-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .addons-cta-inner {
+          grid-template-columns: 1fr;
+        }
+
+        .addons-hero-meta {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .hero-stat {
+          align-self: flex-start;
+        }
+
+        .cta-actions {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .cta-actions .btn {
+          width: 100%;
+          justify-content: center;
+        }
+      }
+
+      @media (max-width: 420px) {
+        .addons-hero {
+          padding-top: 5rem;
+        }
+
+        .addons-scope-note {
+          padding: 0.85rem 0.95rem;
+          gap: 0.6rem;
+        }
+
+        .addons-grid {
+          gap: var(--space-3);
+        }
+
+        .addon-card__top {
+          flex-wrap: wrap;
+          gap: var(--space-2);
+        }
+
+        .addon-card__badges {
+          justify-content: flex-start;
+        }
+
+        .cta-contact-card {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: var(--space-3);
+        }
+      }
+    </style>
+  </head>
+  <body id="top">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="site-header" id="site-header">
+      <div class="container header-inner">
+        <a class="brand-mark" href="index.html" aria-label="AZAI and Brume destination homepage">
+          <span class="brand-mark__title">AZAI &times; BR&Ucirc;ME</span>
+          <span class="brand-mark__subtitle">Jal El Dib Destination</span>
+        </a>
+
+        <button
+          class="menu-toggle"
+          id="menu-toggle"
+          type="button"
+          aria-label="Toggle menu"
+          aria-controls="primary-navigation"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="site-nav" id="primary-navigation" aria-label="Primary">
+          <a href="index.html#azai" class="nav-link">AZAI</a>
+          <a href="index.html#brume" class="nav-link">Brume</a>
+          <a href="index.html#destination" class="nav-link">About</a>
+          <a href="index.html#experiences" class="nav-link">Experiences</a>
+          <a href="index.html#space" class="nav-link">Space</a>
+          <a href="index.html#contact" class="nav-link">Contact</a>
+          <a href="addons.html" class="nav-link" aria-current="page">Add-Ons</a>
+          <a href="index.html#contact" class="btn btn-nav">Plan Your Visit</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content">
+
+      <!-- ── Hero ─────────────────────────────────── -->
+      <section class="addons-hero section" aria-labelledby="addons-title">
+        <div class="container">
+          <p class="eyebrow">What's Possible</p>
+          <h1 id="addons-title">Extend the experience.</h1>
+          <p class="lead">
+            Everything below is a standalone upgrade that builds directly on the foundation already
+            in place. No rebuilding. No starting over. Each one adds measurable value from day one.
+          </p>
+
+          <div class="addons-scope-note" role="note" aria-label="Pricing scope clarification">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="12" y1="8" x2="12" y2="12"/>
+              <line x1="12" y1="16" x2="12.01" y2="16"/>
+            </svg>
+            <p>
+              None of the features on this page are included in the base website.
+              Each add-on is an independent scope, quoted and delivered separately.
+              <a href="index.html">View the base site →</a>
+            </p>
+          </div>
+
+          <div class="addons-hero-meta">
+            <div class="hero-stat">
+              <strong>12</strong>
+              <span>Available add-ons</span>
+            </div>
+            <div class="hero-stat">
+              <strong>2</strong>
+              <span>Independent brands covered</span>
+            </div>
+            <div class="hero-stat">
+              <strong>∞</strong>
+              <span>Room to grow</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Cards ─────────────────────────────────── -->
+      <section class="addons-section section" aria-labelledby="addons-grid-title">
+        <div class="container">
+          <div class="addons-section-head">
+            <p class="eyebrow">The Add-Ons</p>
+            <h2 id="addons-grid-title">Twelve ways to go further.</h2>
+            <p>
+              Each feature below is independent — add one, add all, or phase them in over time.
+              Every decision made here compounds into a destination that runs smarter and earns more.
+            </p>
+          </div>
+
+          <div class="addons-grid">
+
+            <!-- 1. Class Booking -->
+            <article class="addon-card addon-card--highlight reveal">
+              <div class="addon-card__top">
+                <div class="addon-card__icon">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <rect x="3" y="4" width="18" height="18" rx="2"/>
+                    <path d="M16 2v4M8 2v4M3 10h18"/>
+                    <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/>
+                  </svg>
+                </div>
+                <div class="addon-card__badges">
+                  <span class="addon-badge addon-badge--azai">AZAI</span>
+                  <span class="addon-badge addon-badge--featured">High Impact</span>
+                </div>
+              </div>
+              <h3>Online Class Booking</h3>
+              <p class="addon-card__desc">
+                Members browse the live schedule, book Lagree and reformer sessions, manage their
+                plans, receive reminders, and cancel — all without picking up the phone.
+              </p>
+              <div class="addon-card__benefit">
+                <span class="benefit-arrow" aria-hidden="true">
+                  <svg viewBox="0 0 16 16"><path d="M8 1l7 7-7 7M15 8H1"/></svg>
+                </span>
+                <p>
+                  Every manual booking call costs staff time. Booking systems consistently increase
+                  class fill rates by 20–40% while cutting admin overhead in half.
+                </p>
+              </div>
+            </article>
+
+            <!-- 2. E-Commerce -->
+            <article class="addon-card reveal">
+              <div class="addon-card__top">
+                <div class="addon-card__icon">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+                    <path d="M3 6h18"/>
+                    <path d="M16 10a4 4 0 01-8 0"/>
+                  </svg>
+                </div>
+                <div class="addon-card__badges">
+                  <span class="addon-badge addon-badge--both">Both</span>
+                </div>
+              </div>
+              <h3>Online Store</h3>
+              <p class="addon-card__desc">
+                Sell branded merchandise, class packs, gift cards, and seasonal items directly from
+                the site. No third-party platform, no redirect — the purchase stays inside the
+                experience.
+              </p>
+              <div class="addon-card__benefit">
+                <span class="benefit-arrow" aria-hidden="true">
+                  <svg viewBox="0 0 16 16"><path d="M8 1l7 7-7 7M15 8H1"/></svg>
+                </span>
+                <p>
+                  Merchandise and gift cards are high-margin revenue that costs nothing to sell once
+                  the system is in place. A gifting occasion every holiday cycle with zero extra effort.
+                </p>
+              </div>
+            </article>
+
+            <!-- 3. Blog -->
+            <article class="addon-card reveal">
+              <div class="addon-card__top">
+                <div class="addon-card__icon">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+                    <polyline points="14 2 14 8 20 8"/>
+                    <line x1="16" y1="13" x2="8" y2="13"/>
+                    <line x1="16" y1="17" x2="8" y2="17"/>
+                    <polyline points="10 9 9 9 8 9"/>
+                  </svg>
+                </div>
+                <div class="addon-card__badges">
+                  <span class="addon-badge addon-badge--both">Both</span>
+                </div>
+              </div>
+              <h3>Editorial Journal</h3>
+              <p class="addon-card__desc">
+                A curated space for wellness content, coffee origin stories, class spotlights, and
+                lifestyle features — building brand authority and deepening the narrative that sets
+                this destination apart.
+              </p>
+              <div class="addon-card__benefit">
+                <span class="benefit-arrow" aria-hidden="true">
+                  <svg viewBox="0 0 16 16"><path d="M8 1l7 7-7 7M15 8H1"/></svg>
+                </span>
+                <p>
+                  Editorial content is the most cost-effective way to rank on Google for wellness and
+                  café keywords in Beirut — and it compounds value over time unlike paid ads.
+                </p>
+              </div>
+            </article>
+
+            <!-- 4. Digital Menu -->
+            <article class="addon-card reveal">
+              <div class="addon-card__top">
+                <div class="addon-card__icon">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M17 8h1a4 4 0 010 8h-1"/>
+                    <path d="M3 8h14v9a4 4 0 01-4 4H7a4 4 0 01-4-4V8z"/>
+                    <line x1="6" y1="2" x2="6" y2="4"/>
+                    <line x1="10" y1="2" x2="10" y2="4"/>
+                    <line x1="14" y1="2" x2="14" y2="4"/>
+                  </svg>
+                </div>
+                <div class="addon-card__badges">
+                  <span class="addon-badge addon-badge--brume">Brume</span>
+                </div>
+              </div>
+              <h3>Digital Menu</h3>
+              <p class="addon-card__desc">
+                A beautiful, photo-rich digital menu for Brume Coffee Bar — seasonally updated
+                without printing, QR-accessible in the space, and always accurate from morning to
+                evening.
+              </p>
+              <div class="addon-card__benefit">
+                <span class="benefit-arrow" aria-hidden="true">
+                  <svg viewBox="0 0 16 16"><path d="M8 1l7 7-7 7M15 8H1"/></svg>
+                </span>
+                <p>
+                  A well-designed digital menu increases average order value and eliminates the cost
+                  and delay of reprinting every time a drink changes or a seasonal item is added.
+                </p>
+              </div>
+            </article>
+
+            <!-- 5. SEO -->
+            <article class="addon-card addon-card--highlight reveal">
+              <div class="addon-card__top">
+                <div class="addon-card__icon">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <circle cx="11" cy="11" r="8"/>
+                    <path d="M21 21l-4.35-4.35"/>
+                    <path d="M11 8v6M8 11h6"/>
+                  </svg>
+                </div>
+                <div class="addon-card__badges">
+                  <span class="addon-badge addon-badge--both">Both</span>
+                  <span class="addon-badge addon-badge--featured">Must Have</span>
+                </div>
+              </div>
+              <h3>Local SEO Package</h3>
+              <p class="addon-card__desc">
+                Structured metadata, Google Business Profile integration, rich snippets, and
+                keyword-targeted content to surface AZAI and Brume when people search in Jal El Dib
+                and across Greater Beirut.
+              </p>
+              <div class="addon-card__benefit">
+                <span class="benefit-arrow" aria-hidden="true">
+                  <svg viewBox="0 0 16 16"><path d="M8 1l7 7-7 7M15 8H1"/></svg>
+                </span>
+                <p>
+                  Over 80% of local discovery happens through search. Without SEO, the site exists
+                  but doesn't attract. This turns the site into an active acquisition channel.
+                </p>
+              </div>
+            </article>
+
+            <!-- 6. Analytics -->
+            <article class="addon-card reveal">
+              <div class="addon-card__top">
+                <div class="addon-card__icon">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <line x1="18" y1="20" x2="18" y2="10"/>
+                    <line x1="12" y1="20" x2="12" y2="4"/>
+                    <line x1="6" y1="20" x2="6" y2="14"/>
+                    <line x1="2" y1="20" x2="22" y2="20"/>
+                  </svg>
+                </div>
+                <div class="addon-card__badges">
+                  <span class="addon-badge addon-badge--both">Both</span>
+                </div>
+              </div>
+              <h3>Visitor Analytics</h3>
+              <p class="addon-card__desc">
+                A private dashboard showing who visits the site, which sections hold attention,
+                where visitors drop off, how many convert to inquiries, and where they come from
+                geographically.
+              </p>
+              <div class="addon-card__benefit">
+                <span class="benefit-arrow" aria-hidden="true">
+                  <svg viewBox="0 0 16 16"><path d="M8 1l7 7-7 7M15 8H1"/></svg>
+                </span>
+                <p>
+                  You can't improve what you don't measure. Analytics tells you exactly what's
+                  working before spending a single dollar on marketing or campaigns.
+                </p>
+              </div>
+            </article>
+
+            <!-- 7. Loyalty -->
+            <article class="addon-card reveal">
+              <div class="addon-card__top">
+                <div class="addon-card__icon">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                  </svg>
+                </div>
+                <div class="addon-card__badges">
+                  <span class="addon-badge addon-badge--both">Both</span>
+                </div>
+              </div>
+              <h3>Loyalty & Membership Hub</h3>
+              <p class="addon-card__desc">
+                A dedicated portal for class packages, membership tiers, points tracking, and
+                exclusive member perks — branded independently for AZAI and Brume, with shared
+                destination rewards as an option.
+              </p>
+              <div class="addon-card__benefit">
+                <span class="benefit-arrow" aria-hidden="true">
+                  <svg viewBox="0 0 16 16"><path d="M8 1l7 7-7 7M15 8H1"/></svg>
+                </span>
+                <p>
+                  Returning customers spend 5× more than new ones. A membership layer locks in
+                  recurring revenue and gives regulars a concrete reason to stay committed.
+                </p>
+              </div>
+            </article>
+
+            <!-- 8. Live Social Feed -->
+            <article class="addon-card reveal">
+              <div class="addon-card__top">
+                <div class="addon-card__icon">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <rect x="2" y="2" width="20" height="20" rx="5"/>
+                    <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                  </svg>
+                </div>
+                <div class="addon-card__badges">
+                  <span class="addon-badge addon-badge--both">Both</span>
+                </div>
+              </div>
+              <h3>Live Instagram Feed</h3>
+              <p class="addon-card__desc">
+                Real, up-to-date posts from @azaiexperience and @brumecoffeebar automatically
+                pulled into the site — keeping content alive and current without any manual updates
+                to the website itself.
+              </p>
+              <div class="addon-card__benefit">
+                <span class="benefit-arrow" aria-hidden="true">
+                  <svg viewBox="0 0 16 16"><path d="M8 1l7 7-7 7M15 8H1"/></svg>
+                </span>
+                <p>
+                  Social proof embedded directly on the page converts browsers into visitors. Live
+                  content also signals activity and community — which builds trust before anyone
+                  walks through the door.
+                </p>
+              </div>
+            </article>
+
+            <!-- 9. Map -->
+            <article class="addon-card reveal">
+              <div class="addon-card__top">
+                <div class="addon-card__icon">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                    <circle cx="12" cy="10" r="3"/>
+                  </svg>
+                </div>
+                <div class="addon-card__badges">
+                  <span class="addon-badge addon-badge--both">Both</span>
+                </div>
+              </div>
+              <h3>Interactive Map & Wayfinding</h3>
+              <p class="addon-card__desc">
+                An embedded interactive map with custom destination pin styling, a distance
+                calculator from major Beirut landmarks, and one-click directions — so no customer
+                ever gets lost on a first visit.
+              </p>
+              <div class="addon-card__benefit">
+                <span class="benefit-arrow" aria-hidden="true">
+                  <svg viewBox="0 0 16 16"><path d="M8 1l7 7-7 7M15 8H1"/></svg>
+                </span>
+                <p>
+                  First-time visitors who can't easily find a location rarely become second-time
+                  visitors. Clear wayfinding removes the single biggest friction point for new
+                  customers discovering the destination.
+                </p>
+              </div>
+            </article>
+
+            <!-- 10. Arabic -->
+            <article class="addon-card addon-card--highlight reveal">
+              <div class="addon-card__top">
+                <div class="addon-card__icon" aria-hidden="true" style="font-family: serif; font-size: 1.4rem; color: var(--color-espresso); background: rgba(48,38,30,0.08);">
+                  ع
+                </div>
+                <div class="addon-card__badges">
+                  <span class="addon-badge addon-badge--both">Both</span>
+                  <span class="addon-badge addon-badge--featured">High Value</span>
+                </div>
+              </div>
+              <h3>Arabic Language Version</h3>
+              <p class="addon-card__desc">
+                A full Arabic translation of all content with proper right-to-left layout, Arabic
+                typography, and a seamless language toggle — giving the destination genuine bilingual
+                reach across the Lebanese market.
+              </p>
+              <div class="addon-card__benefit">
+                <span class="benefit-arrow" aria-hidden="true">
+                  <svg viewBox="0 0 16 16"><path d="M8 1l7 7-7 7M15 8H1"/></svg>
+                </span>
+                <p>
+                  A large portion of Lebanon's premium consumer market reads and operates primarily
+                  in Arabic. A bilingual site signals cultural respect and effectively doubles the
+                  addressable audience overnight.
+                </p>
+              </div>
+            </article>
+
+            <!-- 11. Animations -->
+            <article class="addon-card reveal">
+              <div class="addon-card__top">
+                <div class="addon-card__icon">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6L12 2z"/>
+                  </svg>
+                </div>
+                <div class="addon-card__badges">
+                  <span class="addon-badge addon-badge--both">Both</span>
+                </div>
+              </div>
+              <h3>Cinematic Motion Upgrade</h3>
+              <p class="addon-card__desc">
+                Deeper scroll-triggered animations, full-bleed image transitions, parallax
+                layering, and refined micro-interactions — elevating the site from polished to
+                genuinely cinematic.
+              </p>
+              <div class="addon-card__benefit">
+                <span class="benefit-arrow" aria-hidden="true">
+                  <svg viewBox="0 0 16 16"><path d="M8 1l7 7-7 7M15 8H1"/></svg>
+                </span>
+                <p>
+                  In a market where every competitor has a website, the feel of the experience is
+                  the differentiator. Premium motion communicates premium service before a single
+                  word is read.
+                </p>
+              </div>
+            </article>
+
+            <!-- 12. CMS -->
+            <article class="addon-card addon-card--highlight reveal">
+              <div class="addon-card__top">
+                <div class="addon-card__icon">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 20h9"/>
+                    <path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/>
+                  </svg>
+                </div>
+                <div class="addon-card__badges">
+                  <span class="addon-badge addon-badge--both">Both</span>
+                  <span class="addon-badge addon-badge--featured">Recommended</span>
+                </div>
+              </div>
+              <h3>Content Management System</h3>
+              <p class="addon-card__desc">
+                A user-friendly dashboard lets the team update text, swap images, change hours,
+                edit the menu, and publish new content — without touching code or waiting for a
+                developer.
+              </p>
+              <div class="addon-card__benefit">
+                <span class="benefit-arrow" aria-hidden="true">
+                  <svg viewBox="0 0 16 16"><path d="M8 1l7 7-7 7M15 8H1"/></svg>
+                </span>
+                <p>
+                  Once a site is live, ongoing dependency on a developer for minor changes costs time
+                  and money every single month. A CMS puts full, permanent control in your hands.
+                </p>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ── CTA ───────────────────────────────────── -->
+      <section class="addons-cta-section section" aria-labelledby="cta-title">
+        <div class="container addons-cta-inner">
+          <div>
+            <p class="eyebrow">Ready to Build</p>
+            <h2 id="cta-title">Pick what moves the needle. Leave the rest for later.</h2>
+            <p>
+              None of these require rebuilding from scratch. Every add-on plugs into what's already
+              here. The question is simply which one opens the most value first.
+            </p>
+            <div class="cta-actions">
+              <a class="btn btn-primary" href="index.html#contact">Start the Conversation</a>
+              <a class="btn btn-secondary" href="index.html">Back to the Site</a>
+            </div>
+          </div>
+
+          <div class="cta-contact-card">
+            <div class="cta-contact-item">
+              <p>WhatsApp</p>
+              <a href="https://wa.me/96171607705" target="_blank" rel="noopener noreferrer">
+                +961 71 607 705
+              </a>
+            </div>
+            <div class="cta-contact-item">
+              <p>AZAI Phone</p>
+              <span>+961 71 607 705</span>
+            </div>
+            <div class="cta-contact-item">
+              <p>Brume Phone</p>
+              <span>+961 71 168 561</span>
+            </div>
+            <div class="cta-contact-item">
+              <p>Location</p>
+              <span>Jal El Dib, Lebanon</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <p class="footer-brand">AZAI</p>
+          <p>Independent wellness destination focused on movement, recovery, and self-care.</p>
+        </div>
+        <div>
+          <p class="footer-brand">Brume Coffee Bar</p>
+          <p>Independent coffee concept centered around atmosphere, ritual, and comfort.</p>
+        </div>
+        <div>
+          <p class="footer-brand">Visit</p>
+          <p>Jal El Dib, Lebanon</p>
+          <p>Instagram: @azaiexperience | @brumecoffeebar</p>
+        </div>
+        <div>
+          <p class="footer-brand">Quick Links</p>
+          <p><a href="index.html#azai">AZAI</a></p>
+          <p><a href="index.html#brume">Brume</a></p>
+          <p><a href="index.html#space">The Space</a></p>
+          <p><a href="index.html#contact">Contact</a></p>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <p>Two independent brands. One destination built with intention.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
