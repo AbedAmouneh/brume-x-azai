@@ -1141,13 +1141,60 @@ ul {
 
 .footer-bottom {
   border-top: 1px solid rgba(235, 203, 166, 0.2);
-  padding: 1rem 0 1.3rem;
+  padding: 1rem 0 0;
 }
 
 .footer-bottom p {
   font-size: 0.84rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
+  padding-bottom: 1.3rem;
+}
+
+.footer-credit {
+  border-top: 1px solid rgba(235, 203, 166, 0.14);
+  padding: 1.6rem 0 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-credit a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+  text-decoration: none;
+  padding: 0.8rem 1.8rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(220, 190, 150, 0.22);
+  background: rgba(255, 240, 210, 0.04);
+  transition: background 240ms ease, border-color 240ms ease, box-shadow 240ms ease;
+}
+
+.footer-credit a:hover {
+  background: rgba(255, 240, 210, 0.1);
+  border-color: rgba(220, 190, 150, 0.44);
+  box-shadow: 0 0 28px rgba(210, 170, 110, 0.12);
+}
+
+.footer-credit__label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: rgba(205, 178, 138, 0.55);
+  font-weight: 600;
+  font-family: var(--font-sans);
+}
+
+.footer-credit__logo {
+  height: 1.5rem;
+  width: auto;
+  display: block;
+  filter: brightness(0) invert(1) opacity(0.82);
+  transition: filter 240ms ease;
+}
+
+.footer-credit a:hover .footer-credit__logo {
+  filter: brightness(0) invert(1) opacity(1);
 }
 
 .reveal {
